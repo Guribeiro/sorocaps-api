@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  database:
+    image: postgres
+    container_name: database_sorocaps
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=sorocaps_development
+    volumes:
+      - pgdata:/data/postgres
+  app:
+    build: .
+    container_name: sorocaps
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/app
+    links:
+      - database
+    depends_on:
+      - database
+
+volumes:
+  pgdata:
+    driver: local
