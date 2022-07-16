@@ -16,18 +16,21 @@ export class CreateSaleOrderProducts1657228678897 implements MigrationInterface 
           {
             name: 'sale_order_id',
             type: 'uuid',
+            isNullable: true,
           },
           {
             name: 'product_id',
             type: 'uuid',
-          },
-          {
-            name: 'price',
-            type: 'decimal',
+            isNullable: true,
           },
           {
             name: 'quantity',
             type: 'integer',
+          },
+          {
+            name: "total_price",
+            type: "decimal",
+            isNullable: true,
           },
           {
             name: "created_at",

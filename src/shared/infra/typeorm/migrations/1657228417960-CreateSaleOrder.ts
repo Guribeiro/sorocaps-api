@@ -16,6 +16,12 @@ export class CreateSaleOrder1657228417960 implements MigrationInterface {
         {
           name: 'customer_id',
           type: 'uuid',
+          isNullable: true,
+        },
+        {
+          name: 'customer_name',
+          type: 'varchar',
+          isNullable: true,
         },
         {
           name: 'status',
@@ -24,6 +30,7 @@ export class CreateSaleOrder1657228417960 implements MigrationInterface {
         {
           name: 'price',
           type: 'decimal',
+          isNullable: true
         },
         {
           name: "created_at",

@@ -11,7 +11,7 @@ class UsersRepository implements IUsersRepository {
     this.repository = getRepository(User);
   }
 
-  public async create({full_name, email, username, password}: ICreateUserDTO): Promise<any> {
+  public async create({full_name, email, username, password}: ICreateUserDTO): Promise<User> {
       const user = this.repository.create({
         full_name,
         email,

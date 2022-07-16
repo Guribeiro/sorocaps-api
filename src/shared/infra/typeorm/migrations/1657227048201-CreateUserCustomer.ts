@@ -18,6 +18,10 @@ export class CreateUserCustomer1657227048201 implements MigrationInterface {
           type: 'varchar',
         },
         {
+          name: 'corporate_name',
+          type: 'varchar',
+        },
+        {
           name: 'phone',
           type: 'varchar',
         },

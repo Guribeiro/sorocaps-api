@@ -18,12 +18,20 @@ export class CreateProduct1657228168566 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'title',
+            type: 'varchar',
+          },
+          {
             name: 'description',
             type: 'varchar',
           },
           {
             name: 'unit_of_measurement',
             type: 'varchar',
+          },
+          {
+            name: 'quantity_in_units',
+            type: 'integer',
           },
           {
             name: 'buy_price',

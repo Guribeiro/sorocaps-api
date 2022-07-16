@@ -2,16 +2,20 @@ import 'reflect-metadata';
 
 import express, {Request, Response, NextFunction} from 'express';
 import 'express-async-errors';
+import cors from 'cors'
 import databse from '../infra/sequelize';
+import '@shared/infra/typeorm';
 
 import '../container';
 import routes from './routes';
 
 import AppError from '@shared/errors/AppError';
 
-const PORT = 3000;
+const PORT = 3333;
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
