@@ -89,17 +89,11 @@ class CreateSaleOrderUseCase {
 
     }
 
-    console.log(order_products)
-
     const order_product_total_price = order_products.reduce((accumulator, current) => accumulator + current.total_price, 0);
 
     order.price = order_product_total_price;
 
-    console.log({order_product_total_price})
-
     await this.ordersRepository.save(order);
-
-    console.log({order})
 
     return {
       order,
