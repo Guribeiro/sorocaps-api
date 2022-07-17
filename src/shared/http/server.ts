@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-
+import {config} from 'dotenv';
 import express, {Request, Response, NextFunction} from 'express';
 import 'express-async-errors';
 import cors from 'cors'
@@ -11,7 +11,9 @@ import routes from './routes';
 
 import AppError from '@shared/errors/AppError';
 
-const PORT = 3333;
+const port = process.env.PORT || 3333;
+
+config();
 
 const app = express();
 
@@ -34,7 +36,7 @@ app.use((err: Error, request: Request, response: Response, next:NextFunction) =>
   }
 );
 
-app.listen(PORT, async () => {
+app.listen(port, async () => {
   await databse.sync();
-  console.log(`server is running at port ${PORT}`)
+  console.log(`server is running at port ${port}`)
 });
